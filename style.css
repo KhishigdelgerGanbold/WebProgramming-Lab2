@@ -1,0 +1,169 @@
+body * {
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman";
+}
+
+body {
+    background-color: #E8E8E8;
+}
+
+.calendar,
+section {
+  max-width: 50rem;
+}
+
+.day {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.day:nth-of-type(-n+7) {
+  background-color: #7CFC00;
+}
+
+.to.day {
+  background: aquamarine;
+}
+
+.month {
+  width: calc(1.5em * 8);
+  padding: 1em;
+}
+
+#year {
+    font-size: 3em;
+    height: 29px;
+    font-weight: normal;
+    padding: 1em;
+    margin-bottom: .5em;
+    text-transform: uppercase;
+    color:brown;
+}
+
+h4 {
+    font-size: 1em;
+    text-transform: uppercase;
+    justify-content: center;
+    flex: 1 0 100%;
+}
+
+.calendar,
+.month {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.month {
+  align-items: flex-start;
+  background-color: white;
+  margin: 5px;
+}
+
+.day {
+  border: 1px solid black;
+  align-items: center;
+  justify-content: center;
+}
+
+#eventText {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 1em;
+}
+
+#events {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: normal;
+    padding: 1em;
+    position:absolute;
+    right:0;
+    bottom:0;
+}
+
+#holiday1 {
+    background-color: blue;
+    color: white;
+}
+
+#bask {
+    background-color: blueviolet;
+    color: white;
+}
+
+#awards {
+    background-color:brown;
+    color: white;
+}
+
+#lab2 {
+    background-color:burlywood;
+}
+
+#extend {
+    background-color:cadetblue;
+}
+
+#whattowrite {
+    background-color:black;
+    color: white;
+}
+
+#women {
+    background-color: chartreuse;
+}
+
+#telllies {
+    background-color:chocolate;
+}
+
+#nothing {
+    background-color: coral;
+    color: white;
+}
+
+#birthday {
+    background-color:cornflowerblue;
+}
+
+#holiday2 {
+    background-color: crimson;
+    color: white;
+}
+
+#countryside {
+    background-color:darkgoldenrod;
+}
+
+#lesson {
+    background-color: darkgreen;
+    color: white;
+}
+
+#celeb {
+    background-color:darkmagenta;
+    color: white;
+}
+
+#learn {
+    background-color:darkolivegreen;
+    color: white;
+}
+
+#keeplearning {
+    background-color:darkorchid;
+    color: white;
+}
+
+#endofsem {
+    background-color:darksalmon;
+    color: white;
+}
+
+#marks {
+    background-color: darkslateblue;
+    color: white;
+}
+
+
