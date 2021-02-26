@@ -8,20 +8,117 @@ var year = d.getFullYear();
 var curMonth = d.getMonth();
 var today = d.getDate();
 
-var calendar_msgs = {
-    JAN: { 1: "1 - Сайхан амарна" },
-    FEB: { 1: "1 - Сагсны тэмцээнтэй", 3: "3 - Шагнал гардуулна даа", 17: "17 - Жавхлан багшийн лаб 2-ыг хийнэ" },
-    MAR: { 2: "2 - Энэ лабынхаа хугацааг сунгах уу яах вэ гэдэгээ шийднэ", 6: "6 - Энд юу бичье дээ байз", 8: "8 - Эмэгтэйчүүддээ баяр хүргэнэ дээ" },
-    APR: { 1: "1 - Бүгдээрээ худлаа ярьцаагаагаарай" },
-    MAY: { 10: "10 - Энэ сард ч ёстой юу ч болдоггүй сар даа" },
-    JUN: { 6: "6 - Жавхлан багшийн төрсөн өдөр" },
-    JUL: { 4: "4 - Хичээл амарсаан ураа" },
-    AUG: { 1: "1 - Хөдөө явдаг цаг даа", 25: "25 - Хичээл сонголт эхэллээ" },
-    SEP: { 1: "1 - 9-н сарын нэгэн боллоо ерөөсөө бидний баяр даа" },
-    OCT: { 13: "13 - Сур сур бас дахин сур" },
-    NOV: { 2: "2 - Сурсаар л бай" },
-    DEC: { 20: "20 - Өвлийн семистер хаагдах нь дээ", 30: "30 - Дүн гаргаж дууслаа баярлалаа баяртай" }
+const calendar_data = {
+    january: {
+        title: "January",
+        messages: {
+            1: "Сайхан амарна"
+        }
+    },
+    february: {
+        title: "February",
+        messages: {
+            1: "Сагсны тэмцээнтэй",
+            3: "Шагнал гардуулна даа",
+            17: "Жавхлан багшийн лаб 2-ыг хийнэ"
+        }
+    },
+    march: {
+        title: "March",
+        messages: {
+            2: "Энэ лабынхаа хугацааг сунгах уу яах вэ гэдэгээ шийднэ",
+            6: "Энд юу бичье дээ байз",
+            8: "Эмэгтэйчүүддээ баяр хүргэнэ дээ"
+        }
+    },
+    april: {
+        title: "April",
+        messages: {
+            1: "Бүгдээрээ худлаа ярьцаагаагаарай"
+        }
+    },
+    may: {
+        title: "May",
+        messages: {
+            10: "Энэ сард ч ёстой юу ч болдоггүй сар даа"
+        }
+    },
+    june: {
+        title: "June",
+        messages: {
+            6: "Жавхлан багшийн төрсөн өдөр"
+        }
+    },
+    july: {
+        title: "July",
+        messages: {
+            4: "Хичээл амарсаан ураа"
+        }
+    },
+    august: {
+        title: "August",
+        messages: {
+            1: "Хөдөө явдаг цаг даа",
+            25: "Хичээл сонголт эхэллээ"
+        }
+    },
+    september: {
+        title: "September",
+        messages: {
+            1: "9-н сарын нэгэн боллоо ерөөсөө бидний баяр даа"
+        }
+    },
+    october: {
+        title: "October",
+        messages: {
+            13: "Сур сур бас дахин сур"
+        }
+    },
+    november: {
+        title: "November",
+        messages: {
+            2: "Сурсаар л бай"
+        }
+    },
+    december: {
+        title: "December",
+        messages: {
+            20: "Өвлийн семистер хаагдах нь дээ",
+            30: "Дүн гаргаж дууслаа баярлалаа баяртай"
+        }
+    }
 }
+
+function eventList() {
+    const container = document.querySelector('#events');
+    const list = document.createElement("ul");
+
+    const data = Object.values(calendar_data);
+
+    for (let month of data) {
+        const monthItem = document.createElement("li");
+        const innerList = document.createElement("ul");
+
+        monthItem.append(month.title);
+
+        const messagesData = Object.entries(month.messages);
+
+        for (let [key, message] of messagesData) {
+            const messageItem = document.createElement("li");
+
+            messageItem.append(`${key} ${message}`);
+            innerList.append(messageItem);
+        }
+
+        monthItem.append(innerList);
+        list.append(monthItem);
+    }
+
+    container.append(list);
+}
+
+eventList();
+
 
 
 window.addEventListener("load", function () {
@@ -161,7 +258,7 @@ function createMonthHeader(month) {
 
     return monthDiv;
 }
-
+/*
 function eventList() {
 
     jQuery(document).ready(function ($) {
@@ -192,6 +289,7 @@ function eventList() {
 
 
 eventList();
+*/
 
 function daysInMonth(year, month) {
     return new Date(year, month + 1, 0).getDate();
