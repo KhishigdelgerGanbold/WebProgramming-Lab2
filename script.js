@@ -258,38 +258,6 @@ function createMonthHeader(month) {
 
     return monthDiv;
 }
-/*
-function eventList() {
-
-    jQuery(document).ready(function ($) {
-
-        var $ul = $('<ul></ul>');
-
-        function getList(item, $list) {
-
-            $.each(item, function (key, value) {
-                var $li = $('<li />');
-                $li.append(key);
-
-                var $subul = $("<ul/>");
-
-                $.each(value, function (i) {
-                    var subli = $('<li/>').text(value[i]).appendTo($subul);
-                });
-
-                $li.append($subul).appendTo($list);
-
-            });
-        }
-        getList(calendar_msgs, $ul);
-        $ul.appendTo("#events");
-    });
-
-}
-
-
-eventList();
-*/
 
 function daysInMonth(year, month) {
     return new Date(year, month + 1, 0).getDate();
